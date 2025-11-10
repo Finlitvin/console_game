@@ -5,26 +5,33 @@
 
 
 Map::Map() {
-    for (int i = 0; i < game_const::height; i++) {
-        for (int j = 0; j < game_const::width; j++) {
-            if (i == 0 || j == 0 || j == game_const::width - 1 || i == game_const::height - 1) {
-                map_[i][j] = '#';
+    for (int x = 0; x < game_const::height; x++) {
+        for (int y = 0; y < game_const::width; y++) {
+            if (x == 0 || y == 0 || y == game_const::width - 1 || x == game_const::height - 1) {
+                map_[x][y] = '#';
             } else {
-                map_[i][j] = ' ';
+                map_[x][y] = ' ';
             }
         }
     }
 }
 
-void Map::draw(const Player& player, const Player& enemy) {
-    for (int i = 0; i < game_const::height; i++) {
-        for (int j = 0; j < game_const::width; j++) {
-            if (player.getX() == i && player.getY() == j) {
-                std::cout << player.getSymbol();
-            } else if (enemy.getX() == i && enemy.getY() == j) {
-                std::cout << enemy.getSymbol();
-            } else {
-                std::cout << map_[i][j];
+void Map::addMapItem(MapItem& item) {
+    items.push_back(item);
+}
+
+void Map::draw() {
+    for (int x = 0; x < game_const::height; x++) {
+        for (int y = 0; y < game_const::width; y++) {
+            bool isDraw = false;
+            for (int i = 0; i < items.size(); i++) {
+                if (!isDraw && items[i].getX() == x && items[i].getY() == y) {
+                    std::cout << items[i].getSymbol();
+                    isDraw = true;
+                }
+            }
+            if (!isDraw) {
+                std::cout << map_[x][y];
             }
         }
         std::cout << std::endl;

@@ -10,6 +10,8 @@ Player::Player(int x, int y, char symbol)
 
 void Player::info() const {
     std::cout << "********* Player info *********" << std::endl;
+    std::cout << "X: " << x_ << std::endl;
+    std::cout << "Y: " << y_ << std::endl;
     std::cout << "Name: " << symbol_ << std::endl;
     std::cout << "Health: " << health_ << std::endl;
     std::cout << "Damage: " << damage_ << std::endl;

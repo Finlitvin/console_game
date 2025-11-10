@@ -6,13 +6,14 @@
 #include "../player/player.h"
 
 
-class Map
-{
+class Map {
 private:
     char map_[game_const::height][game_const::width];
-    std::vector<Player> mapItems;
+    std::vector<MapItem> items;
+
 public:
     Map();
-    void draw(const Player& player, const Player& enemy);
+    void addMapItem(MapItem& item);
+    void draw();
 };
 
