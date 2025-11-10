@@ -11,7 +11,7 @@ private:
     int armor_;
 
 public:
-    Player(char name);
+    Player(int x, int y, char name);
     int getX() const;
     void setX(int x);
 

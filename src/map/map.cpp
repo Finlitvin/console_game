@@ -16,14 +16,16 @@ Map::Map() {
     }
 }
 
-void Map::draw(const Player& player) {
+void Map::draw(const Player& player, const Player& enemy) {
     for (int i = 0; i < game_const::height; i++) {
         for (int j = 0; j < game_const::width; j++) {
             if (player.getX() == i && player.getY() == j) {
                 std::cout << player.getName();
+            } else if (enemy.getX() == i && enemy.getY() == j) {
+                std::cout << enemy.getName();
             } else {
                 std::cout << map_[i][j];
-            }  
+            }
         }
         std::cout << std::endl;
     }

@@ -8,6 +8,7 @@ class Game
 {
 private:
     Player player_;
+    Player enemy_;
     Map map_;
 public:
     Game();

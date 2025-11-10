@@ -10,6 +10,6 @@ private:
     char map_[game_const::height][game_const::width];
 public:
     Map();
-    void draw(const Player& player);
+    void draw(const Player& player, const Player& enemy);
 };
 

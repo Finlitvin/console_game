@@ -4,8 +4,8 @@
 #include "../game/game_const.h"
 
 
-Player::Player(char name)
-: x_(2), y_(2), name_(name), health_(10), damage_(3), armor_(1){}
+Player::Player(int x, int y, char name)
+: x_(x), y_(y), name_(name), health_(10), damage_(3), armor_(1){}
 
 int Player::getX() const{
     return this->x_;
