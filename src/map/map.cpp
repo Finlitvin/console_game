@@ -17,7 +17,7 @@ Map::Map() {
 }
 
 void Map::addMapItem(MapItem& item) {
-    items.push_back(item);
+    items.push_back(&item);
 }
 
 void Map::draw() {
@@ -25,8 +25,8 @@ void Map::draw() {
         for (int y = 0; y < game_const::width; y++) {
             bool isDraw = false;
             for (int i = 0; i < items.size(); i++) {
-                if (!isDraw && items[i].getX() == x && items[i].getY() == y) {
-                    std::cout << items[i].getSymbol();
+                if (!isDraw && items[i]->getX() == x && items[i]->getY() == y) {
+                    std::cout << items[i]->getSymbol();
                     isDraw = true;
                 }
             }

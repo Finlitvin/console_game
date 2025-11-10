@@ -9,7 +9,7 @@
 class Map {
 private:
     char map_[game_const::height][game_const::width];
-    std::vector<MapItem> items;
+    std::vector<MapItem*> items;
 
 public:
     Map();
