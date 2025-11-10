@@ -1,6 +1,8 @@
 #include <iostream>
+
 #include "player.h"
-#include "game_const.h"
+#include "../game/game_const.h"
+
 
 Player::Player(char name)
 : x_(2), y_(2), name_(name), health_(10), damage_(3), armor_(1){}

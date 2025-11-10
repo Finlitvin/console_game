@@ -1,7 +1,8 @@
 #pragma once
 
-#include "game_const.h"
-#include "player.h"
+#include "../game/game_const.h"
+#include "../player/player.h"
+
 
 class Map
 {

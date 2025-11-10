@@ -2,8 +2,9 @@
 #include <termios.h>
 #include <unistd.h>
 #include <cstdio>
+
 #include "game.h"
-#include "utils.h"
+#include "../utils/utils.h"
 
 Game::Game(): player_(Player{'R'}), map_(Map{}) {}
 

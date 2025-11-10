@@ -1,5 +1,7 @@
 #pragma once
+
 #include <termios.h>
+
 
 class Utils {
 private:

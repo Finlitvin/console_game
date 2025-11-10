@@ -1,6 +1,8 @@
 #include <iostream>
+
 #include "map.h"
-#include "player.h"
+#include "../player/player.h"
+
 
 Map::Map() {
     for (int i = 0; i < game_const::height; i++) {

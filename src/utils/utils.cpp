@@ -1,6 +1,8 @@
 #include <unistd.h>
 #include <cstdio>
+
 #include "utils.h"
+
 
 termios Utils::old_;
 termios Utils::current_;
