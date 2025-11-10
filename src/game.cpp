@@ -3,20 +3,10 @@
 #include <unistd.h>
 #include <cstdio>
 #include "game.h"
+#include "utils.h"
 
 Game::Game(): player_(Player{'R'}), map_(Map{}) {}
 
-int Game::getch() {
-    struct termios oldt, newt;
-    int ch;
-    tcgetattr(STDIN_FILENO, &oldt);
-    newt = oldt;
-    newt.c_lflag &= ~(ICANON | ECHO);
-    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-    ch = getchar();
-    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-    return ch;
-}
 
 void Game::run() {
     char direction;
@@ -27,7 +17,7 @@ void Game::run() {
         player_.info();
         map_.draw(player_);
 
-        direction = getch();
+        direction = Utils::getch();
         player_.move(direction);
     };
 }

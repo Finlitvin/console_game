@@ -12,4 +12,6 @@ add_executable(
     src/map.cpp
     src/game.h
     src/game.cpp
+    src/utils.h
+    src/utils.cpp
 )

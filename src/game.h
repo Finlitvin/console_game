@@ -12,6 +12,5 @@ private:
 public:
     Game();
 
-    int getch();
     void run();
 };
