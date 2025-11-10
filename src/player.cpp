@@ -31,21 +31,21 @@ void Player::setName(char name) {
 
 void Player::info() const {
     std::cout << "********* Player info *********" << std::endl;
-    std::cout << "Name: " << this->name_ << std::endl;
-    std::cout << "Health: " << this->health_ << std::endl;
-    std::cout << "Damage: " << this->damage_ << std::endl;
-    std::cout << "Armor: " << this->armor_ << std::endl;
+    std::cout << "Name: " << name_ << std::endl;
+    std::cout << "Health: " << health_ << std::endl;
+    std::cout << "Damage: " << damage_ << std::endl;
+    std::cout << "Armor: " << armor_ << std::endl;
 }
 
 void Player::move(char key) {
-    if (key == 'w' && this->x_ > 1) {
-        this->x_--;
-    } else if (key == 's' && this->x_ < (game_const::height - 2)) {
-        this->x_++;
-    } else if (key == 'a' && this->y_ > 1) {
-        this->y_--;
-    } else if (key == 'd' && this->y_ < (game_const::width - 2)) {
-        this->y_++;
+    if (key == 'w' && x_ > 1) {
+        x_--;
+    } else if (key == 's' && x_ < (game_const::height - 2)) {
+        x_++;
+    } else if (key == 'a' && y_ > 1) {
+        y_--;
+    } else if (key == 'd' && y_ < (game_const::width - 2)) {
+        y_++;
     }
 }
 

@@ -24,10 +24,10 @@ void Game::run() {
     while (direction != 'q') {
         system("clear");
 
-        this->player_.info();
-        this->map_.draw(this->player_);
+        player_.info();
+        map_.draw(player_);
 
-        direction = this->getch();
+        direction = getch();
         player_.move(direction);
     };
 }
