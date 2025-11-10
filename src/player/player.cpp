@@ -4,36 +4,13 @@
 #include "../game/game_const.h"
 
 
-Player::Player(int x, int y, char name)
-: x_(x), y_(y), name_(name), health_(10), damage_(3), armor_(1){}
+Player::Player(int x, int y, char symbol)
+: MapItem(x, y, symbol), health_(10), damage_(3), armor_(1) {}
 
-int Player::getX() const{
-    return this->x_;
-}
-
-void Player::setX(int x) {
-    this->x_ = x;
-}
-
-int Player::getY() const{
-    return this->y_;
-}
-
-void Player::setY(int y) {
-    this->y_ = y;
-}
-
-char Player::getName() const {
-    return this->name_;
-}
-
-void Player::setName(char name) {
-    this->name_ = name;
-}
 
 void Player::info() const {
     std::cout << "********* Player info *********" << std::endl;
-    std::cout << "Name: " << name_ << std::endl;
+    std::cout << "Name: " << symbol_ << std::endl;
     std::cout << "Health: " << health_ << std::endl;
     std::cout << "Damage: " << damage_ << std::endl;
     std::cout << "Armor: " << armor_ << std::endl;

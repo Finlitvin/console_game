@@ -10,6 +10,8 @@ add_executable(
     src/player/player.h
     src/map/map.h
     src/map/map.cpp
+    src/map/map_item.h
+    src/map/map_item.cpp
     src/game/game.h
     src/game/game.cpp
     src/game/game_const.h

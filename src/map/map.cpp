@@ -20,9 +20,9 @@ void Map::draw(const Player& player, const Player& enemy) {
     for (int i = 0; i < game_const::height; i++) {
         for (int j = 0; j < game_const::width; j++) {
             if (player.getX() == i && player.getY() == j) {
-                std::cout << player.getName();
+                std::cout << player.getSymbol();
             } else if (enemy.getX() == i && enemy.getY() == j) {
-                std::cout << enemy.getName();
+                std::cout << enemy.getSymbol();
             } else {
                 std::cout << map_[i][j];
             }
