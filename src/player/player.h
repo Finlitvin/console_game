@@ -10,7 +10,18 @@ private:
 
 public:
     Player(int x, int y, char name);
+    
+    void setHealth(int health);
+    int getHealth() const;
+
+    void setDamage(int damage);
+    int getDamage() const;
+
+    void setArmor(int armor);
+    int getArmor() const;
 
     void info() const;
     void move(char key);
+    void attack(Player& enemy);
+    bool isEnemyAround(Player& enemy);
 };

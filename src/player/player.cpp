@@ -5,8 +5,39 @@
 
 
 Player::Player(int x, int y, char symbol)
-: MapItem(x, y, symbol), health_(10), damage_(3), armor_(1) {}
+: MapItem(x, y, symbol), health_(100), damage_(5), armor_(600) {}
 
+void Player::setHealth(int health) {
+    if (health_ == 0) {
+        return;
+    }
+
+    if (health_ - health < 0) {
+        health_ = 0;
+    }
+
+    health_ = health;
+}
+
+int Player::getHealth() const {
+    return health_;
+}
+
+void Player::setDamage(int damage) {
+    damage_ = damage;
+}
+
+int Player::getDamage() const {
+    return damage_;
+}
+
+void Player::setArmor(int armor) {
+    armor_ = armor;
+}
+
+int Player::getArmor() const {
+    return armor_;
+}
 
 void Player::info() const {
     std::cout << "********* Player info *********" << std::endl;
@@ -30,3 +61,20 @@ void Player::move(char key) {
     }
 }
 
+void Player::attack(Player &enemy) {
+    if (isEnemyAround(enemy)) {
+        float health = enemy.getHealth() - damage_;
+
+        enemy.setHealth(health);
+    }
+}
+
+bool Player::isEnemyAround(Player &enemy) {
+    if (
+        (enemy.getX() == x_ + 1 || enemy.getX() == x_ || enemy.getX() == x_ - 1) &&
+        (enemy.getY() == y_ + 1 || enemy.getY() == y_ || enemy.getY() == y_ - 1)
+    ) {
+        return true;
+    }
+    return false;
+}

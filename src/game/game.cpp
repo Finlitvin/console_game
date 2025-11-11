@@ -10,19 +10,24 @@ Game::Game(): player_(Player{2, 2, 'R'}), enemy_(Player{5, 5, 'E'}) {}
 
 
 void Game::run() {
-    char direction;
+    char command;
 
     map_.addMapItem(player_);
     map_.addMapItem(enemy_);
 
-    while (direction != 'q') {
+    while (command != 'q') {
         system("clear");
 
         player_.info();
         enemy_.info();
         map_.draw();
 
-        direction = Utils::getch();
-        player_.move(direction);
+        command = Utils::getch();
+        if (command == 'r') {
+            player_.attack(enemy_);
+            
+        } else {
+            player_.move(command);
+        }
     };
 }
