@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(
     console_game
     main.cpp
+    # src/apple/apple.h
+    # src/apple/apple.cpp
     src/player/player.cpp
     src/player/player.h
     src/map/map.h
