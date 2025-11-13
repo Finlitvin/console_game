@@ -5,7 +5,7 @@
 
 
 Player::Player(int x, int y, char symbol)
-: MapItem(x, y, symbol), health_(100), damage_(600), armor_(500) {}
+: MapItem(x, y, symbol), health_(100), damage_(50), armor_(10) {}
 
 void Player::setHealth(int health) {
     if (health_ == 0) {
