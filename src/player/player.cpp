@@ -5,15 +5,10 @@
 
 
 Player::Player(int x, int y, char symbol)
-: MapItem(x, y, symbol), health_(100), damage_(30), armor_(50) {}
+: MapItem(x, y, symbol), health_(100), damage_(600), armor_(500) {}
 
 void Player::setHealth(int health) {
     if (health_ == 0) {
-        return;
-    }
-
-    if ((health_ - health) < 0) {
-        health_ = 0;
         return;
     }
 
@@ -78,6 +73,9 @@ void Player::attack(Player &enemy) {
     }
 
     health -= decrease_health;
+    if (health < 0) {
+        health = 0;
+    }
     enemy.setHealth(health);
 }
 
